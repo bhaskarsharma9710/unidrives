@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; background: #f7f7f7; color: #111; -webkit-font-smoothing: antialiased; }
+
+/* Smooth scrolling */
+html { scroll-behavior: smooth; }
+
+/* Remove tap highlight on mobile */
+* { -webkit-tap-highlight-color: transparent; }
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+/* Mobile touch targets */
+button, a { min-height: 36px; }
+
+
+html, body, #root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img, table {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .mobile-scroll {
+    overflow-x: auto;
+  }
+}
+
+
+/* Global mobile responsiveness improvements */
+@media (max-width: 768px) {
+  * { min-width: 0; }
+  table { display: block; overflow-x: auto; white-space: nowrap; }
+  input, select, textarea, button { max-width: 100%; }
+  .overflow-auto, .overflow-x-auto { -webkit-overflow-scrolling: touch; }
+}
