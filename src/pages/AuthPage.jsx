@@ -179,11 +179,7 @@ export default function AuthPage({ navigate, showToast }) {
                     className="w-full bg-[#111] text-white py-3.5 rounded-xl font-bold hover:bg-[#FF5A3C] active:scale-[0.98] transition-colors mt-1 disabled:opacity-60 text-sm">
                     {loading ? "Logging in…" : "Login →"}
                   </button>
-                  <div className="bg-gray-50 rounded-xl p-3 text-xs text-gray-500 border border-gray-100">
-                    <div className="font-bold text-gray-700 mb-1">Demo Accounts:</div>
-                    <div>Admin: admin@ecovan.in / admin123</div>
-                    <div>Driver: driver@ecovan.in / driver123</div>
-                  </div>
+                 
                   <p className="text-center text-xs text-gray-500">No account? <button onClick={() => resetTab("register")} className="text-[#FF5A3C] font-bold">Register free</button></p>
                 </div>
               </>

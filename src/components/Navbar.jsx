@@ -3,8 +3,6 @@ import { FaBus, FaMapMarkerAlt, FaTachometerAlt, FaHome, FaCog, FaSignOutAlt, Fa
 import { IoCarSportSharp } from "react-icons/io5";
 import { useState } from "react";
 
-const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdxWEftMD3T0ZYKzrCcOYJcuzBcAHDFKlfnNV13deXdzG7xAA/viewform?usp=dialog";
-
 const Logo = ({ onClick }) => (
   <button onClick={onClick} className="flex items-center select-none">
     <span style={{ fontFamily:"'Inter',sans-serif", fontWeight:900, fontSize:22, color:"#111", letterSpacing:"-0.5px" }}>
@@ -13,14 +11,14 @@ const Logo = ({ onClick }) => (
   </button>
 );
 
-export default function Navbar({ activePage, navigate }) {
+export default function Navbar({ activePage, navigate, onComingSoon }) {
   const { user, logout } = useAuth();
   const [open, setOpen] = useState(false);
 
   const studentLinks = [
     { key:"home",      label:"Home",       icon:<FaHome /> },
-    { key:"booking",   label:"Book Ride",  icon:<IoCarSportSharp />, form:true },
-    { key:"tracking",  label:"Live Track", icon:<FaMapMarkerAlt /> },
+    { key:"booking",   label:"Book Ride",  icon:<IoCarSportSharp />, comingSoon:"booking" },
+    { key:"tracking",  label:"Live Track", icon:<FaMapMarkerAlt />,  comingSoon:"tracking" },
     { key:"dashboard", label:"Dashboard",  icon:<FaTachometerAlt /> },
   ];
   const driverLinks = [
@@ -30,13 +28,18 @@ export default function Navbar({ activePage, navigate }) {
   const adminLinks = [
     { key:"home",       label:"Home",       icon:<FaHome /> },
     { key:"adminpanel", label:"Admin Panel", icon:<FaCog /> },
-    { key:"tracking",   label:"Live Track",  icon:<FaMapMarkerAlt /> },
+    { key:"tracking",   label:"Live Track",  icon:<FaMapMarkerAlt />, comingSoon:"tracking" },
   ];
   const links = user?.role==="driver" ? driverLinks : user?.role==="admin" ? adminLinks : studentLinks;
 
   const go = (link) => {
-    if (link.form) { window.open(FORM_URL, "_blank", "noopener,noreferrer"); setOpen(false); return; }
-    navigate(link.key); setOpen(false);
+    if (link.comingSoon) {
+      if (onComingSoon) onComingSoon(link.comingSoon);
+      setOpen(false);
+      return;
+    }
+    navigate(link.key);
+    setOpen(false);
   };
 
   return (
