@@ -8,7 +8,7 @@ const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdxWEftMD3T0ZYKzrCcOY
 const features = [
   { Icon: MdEventSeat,    title:"Limited Seating",  desc:"Only 8 students per car. No overcrowding, guaranteed comfort on every ride." },
   { Icon: FaMapMarkerAlt, title:"Live Tracking",    desc:"Real-time GPS so you always know exactly where your car is." },
-  { Icon: MdPayment,      title:"Affordable",       desc:"Share rides, split costs. Starting at just ₹90 per trip." },
+  { Icon: MdPayment,      title:"Affordable",       desc:"Share rides, split costs. Starting at just ₹85 per trip." },
   { Icon: FaShieldAlt,    title:"Safe Rides",       desc:"Verified drivers, SOS button, and full ride history for your safety." },
   { Icon: FaBolt,         title:"Instant Booking",  desc:"Book a seat in seconds. Get your confirmation instantly on your phone." },
   { Icon: FaLeaf,         title:"Eco-Friendly",     desc:"Shared rides mean fewer vehicles, lower emissions, greener campus." },
@@ -343,8 +343,8 @@ export default function HomePage({ navigate }) {
             </div>
             <div className="grid grid-cols-2 gap-3">
               {[
-                { val:"8",    label:"Seats / Car",  Icon: MdEventSeat },
-                { val:"₹90", label:"Per Ride",      Icon: MdPayment },
+                { val:"7",    label:"Seats / Car",  Icon: MdEventSeat },
+                { val:"₹85", label:"Per Ride",      Icon: MdPayment },
               ].map(({ val, label, Icon }) => (
                 <div key={label} className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 flex items-center gap-3 backdrop-blur-sm">
                   <div className="w-7 h-7 rounded-lg bg-[#FF5A3C]/15 flex items-center justify-center shrink-0">
@@ -393,7 +393,7 @@ export default function HomePage({ navigate }) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { step:"01", title:"Create Account", desc:"Register with your university email and get started in under a minute." },
-              { step:"02", title:"Book Your Seat", desc:"Browse available cars, pick a seat number, and pay just ₹90." },
+              { step:"02", title:"Book Your Seat", desc:"Browse available cars, pick a seat number, and pay just ₹85." },
               { step:"03", title:"Ride & Track",   desc:"Get notified when your car departs. Track it live until you arrive." },
             ].map(({ step, title, desc }) => (
               <div key={step} className="relative">
