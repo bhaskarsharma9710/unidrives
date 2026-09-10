@@ -8,7 +8,7 @@ const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdxWEftMD3T0ZYKzrCcOY
 const features = [
   { Icon: MdEventSeat,    title:"Limited Seating",  desc:"Only 8 students per car. No overcrowding, guaranteed comfort on every ride." },
   { Icon: FaMapMarkerAlt, title:"Live Tracking",    desc:"Real-time GPS so you always know exactly where your car is." },
-  { Icon: MdPayment,      title:"Affordable",       desc:"Share rides, split costs. Starting at just ₹85 per trip." },
+  { Icon: MdPayment,      title:"Affordable",       desc:"Share rides, split costs. Starting at just ₹100 per trip." },
   { Icon: FaShieldAlt,    title:"Safe Rides",       desc:"Verified drivers, SOS button, and full ride history for your safety." },
   { Icon: FaBolt,         title:"Instant Booking",  desc:"Book a seat in seconds. Get your confirmation instantly on your phone." },
   { Icon: FaLeaf,         title:"Eco-Friendly",     desc:"Shared rides mean fewer vehicles, lower emissions, greener campus." },
