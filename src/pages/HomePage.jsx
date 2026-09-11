@@ -344,7 +344,7 @@ export default function HomePage({ navigate }) {
             <div className="grid grid-cols-2 gap-3">
               {[
                 { val:"7",    label:"Seats / Car",  Icon: MdEventSeat },
-                { val:"₹85", label:"Per Ride",      Icon: MdPayment },
+                { val:"₹100", label:"Per Ride",      Icon: MdPayment },
               ].map(({ val, label, Icon }) => (
                 <div key={label} className="bg-white/5 border border-white/10 rounded-xl px-4 py-3 flex items-center gap-3 backdrop-blur-sm">
                   <div className="w-7 h-7 rounded-lg bg-[#FF5A3C]/15 flex items-center justify-center shrink-0">
